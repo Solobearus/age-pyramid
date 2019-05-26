@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Age Pyramid</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="display">
+        <div id="male"></div>
+        <div id="female"></div>
+    </div>
+    <script>
+        // import main from "./main.js";
+
+        const agesData = [
+            { name: 'ivan', gender: 'male', age: 25 },
+            { name: 'jhonathan', gender: 'male', age: 0 },
+            { name: 'jhonathan1', gender: 'male', age: 10 },
+            { name: 'jhonathan2', gender: 'male', age: 13 },
+            { name: 'sveta', gender: 'female', age: 5 },
+            { name: 'sveta2', gender: 'female', age: 12 },
+            { name: 'sveta3', gender: 'female', age: 15 },
+            { name: 'hila', gender: 'female', age: 49 },
+            { name: 'igor', gender: 'male', age: 53 },
+            { name: 'x', gender: 'male', age: 4 },
+            { name: 'x12322', gender: 'male', age: 34 },
+            { name: 'x1232', gender: 'female', age: 24 },
+            { name: 'x23132', gender: 'male', age: 34 },
+            { name: 'x1112', gender: 'female', age: 14 },
+            { name: 'x112', gender: 'male', age: 4 },
+            { name: 'xasd2', gender: 'female', age: 4 },
+            { name: 'x5', gender: 'male', age: 4 },
+            { name: 'x4', gender: 'female', age: 4 },
+            { name: 'y', gender: 'female', age: 13 },
+            { name: 'y2', gender: 'male', age: 23 },
+            { name: 'y3', gender: 'male', age: 13 },
+            { name: 'y44', gender: 'male', age: 13 },
+            { name: 'y2', gender: 'female', age: 4 },
+            { name: 'x3a', gender: 'female', age: 33 },
+            { name: 'x3b', gender: 'female', age: 23 },
+            { name: 'x3c', gender: 'male', age: 3 },
+            { name: 'x3d', gender: 'male', age: 23 },
+            { name: 'x2d', gender: 'female', age: 13 },
+            { name: 'x55d', gender: 'female', age: 23 },
+            { name: 'xwwd', gender: 'male', age: 13 },
+            { name: 'xaaad', gender: 'male', age: 13 },
+        ];
+
+        const pyramid = reduceTheData(agesData);
+        const maleDiv = document.querySelector('#male');
+        const femaleDiv = document.querySelector('#female');
+
+        Object.entries(pyramid).reduce((acc, gender) => {
+            console.log(gender);
+
+            Object.values(gender[1]).reduce((acc2, age) => {
+                const div = document.createElement('div');
+                const width = 20 * age;
+                div.setAttribute('style', "width: " + width + 'px');
+
+                console.log(gender[0]);
+
+                gender[0] == 'male' ? maleDiv.appendChild(div) : femaleDiv.appendChild(div);
+            }, gender);
+        }, {});
+
+        const males = document.querySelector("#male");
+
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // TODO: future referance 
+// Object.values(pyramid).map((gender) => {
+//     Object.values(gender).map((age) => {
+//         const div = document.createElement('div');
+//         const width = 10 * age;
+//         div.setAttribute('width', width + 'px');
+
+//         gender == 'male' ? maleDiv.appendChild(div) : femaleDiv.appendChild(div);
+//     })
+// }) -->

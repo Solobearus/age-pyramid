@@ -1,0 +1,24 @@
+body {
+  display: grid;
+  height: 100vh;
+  width: 100vw; }
+  body #display {
+    justify-self: center;
+    width: 500px;
+    height: min-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr; }
+    body #display #male {
+      display: grid;
+      justify-items: right; }
+      body #display #male div {
+        height: 10px;
+        background-color: blue; }
+    body #display #female {
+      display: grid;
+      justify-items: left; }
+      body #display #female div {
+        height: 10px;
+        background-color: pink; }
+
+/*# sourceMappingURL=index.css.map */
